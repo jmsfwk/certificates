@@ -1,0 +1,11 @@
+fastcgi_param  SSL_PROTOCOL         $ssl_protocol;             # The SSL protocol version (SSLv2, SSLv3, TLSv1, TLSv1.1, TLSv1.2)
+fastcgi_param  SSL_SESSION_ID       $ssl_session_id;           # The hex-encoded SSL session id
+fastcgi_param  SSL_CIPHER           $ssl_cipher;               # The cipher specification name
+
+fastcgi_param  SSL_CLIENT_S_DN      $ssl_client_s_dn;          # Subject DN in client's certificate
+fastcgi_param  SSL_CLIENT_I_DN      $ssl_client_i_dn;          # Issuer DN of client's certificate
+fastcgi_param  SSL_CLIENT_V_START   $ssl_client_v_start;       # Validity of client's certificate (start time)
+fastcgi_param  SSL_CLIENT_V_END     $ssl_client_v_end;         # Validity of client's certificate (end time)
+fastcgi_param  SSL_CLIENT_V_REMAIN  $ssl_client_v_remain;      # Number of days until client's certificate expires
+fastcgi_param  SSL_CLIENT_CERT      $ssl_client_escaped_cert;  # PEM-encoded client certificate
+fastcgi_param  SSL_CLIENT_VERIFY    $ssl_client_verify;        # NONE, SUCCESS or FAILED:reason

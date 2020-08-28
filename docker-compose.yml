@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - 443:443
+    volumes:
+      - .docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - .docker/nginx/clientssl_params:/etc/nginx/clientssl_params:ro
+      - .docker/nginx:/etc/nginx/conf.d:ro
+      - ./src:/usr/share/nginx/html:ro
+      - ./ssl:/etc/nginx/ssl:ro
+  php:
+    image: php:7.3-fpm-alpine
+    volumes:
+      - ./src:/var/www/html:ro
